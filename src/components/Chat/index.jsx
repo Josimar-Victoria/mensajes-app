@@ -9,7 +9,7 @@ import style from "./styles.module.css";
 import "firebase/compat/firestore";
 import firebase from "firebase/compat/app";
 import { selectUser } from "../../features/userSlice";
-
+import FlipMove from "react-flip-move";
 export default function Chat() {
   const [input, setInput] = useState("");
   const [messages, setMessage] = useState([]);
@@ -56,9 +56,11 @@ export default function Chat() {
         <strong>Detalles</strong>
       </div>
       <div className={style.chat__mesages}>
-        {messages.map(({ id, data }) => (
-          <Message key={id} contents={data} />
-        ))}
+        <FlipMove>
+          {messages.map(({ id, data }) => (
+            <Message key={id} contents={data} />
+          ))}
+        </FlipMove>
       </div>
 
       <div className={style.chat__input}>

@@ -21,6 +21,7 @@
 }
 .chat__mesages {
   flex: 1;
+  overflow-y: scroll;
 }
 .chat__input {
   display: flex;
@@ -48,4 +49,17 @@
 }
 .chat__input > form > button:hover {
   color: #fff;
+}
+
+.chat__mesages::-webkit-scrollbar {
+  width: 13px !important;
+  cursor: pointer;
+}
+.chat__mesages::-webkit-scrollbar-thumb {
+  background-color: rgba(179, 179, 179);
+  cursor: pointer;
+}
+.chat__mesages::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  cursor: pointer;
 }
